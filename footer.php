@@ -10,7 +10,7 @@
     <!-- Social -->
     <ul class="left">
         <?php if (ale_get_option('fb')) {
-            echo '<li class="facebook">fuck<a href="' . ale_get_option('fb') . '" rel="external"></a></li>';
+            echo '<li class="facebook"><a href="' . ale_get_option('fb') . '" rel="external"></a></li>';
         } ?>
         <?php if (ale_get_option('twi')) {
             echo '<li class="twitter"><a href="' . ale_get_option('twi') . '" rel="external"></a></li>';
