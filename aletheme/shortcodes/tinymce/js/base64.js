@@ -115,10 +115,10 @@
  * OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
- */ 
+ */
 
 
-function base64_decode (data) {
+function base64_decode(data) {
     // Decodes string using MIME base64 algorithm  
     // 
     // version: 1103.1210
@@ -179,7 +179,7 @@ function base64_decode (data) {
     return dec;
 }
 
-function base64_encode (data) {
+function base64_encode(data) {
     // Encodes string using MIME base64 algorithm  
     // 
     // version: 1103.1210
@@ -229,18 +229,18 @@ function base64_encode (data) {
     enc = tmp_arr.join('');
 
     switch (data.length % 3) {
-    case 1:
-        enc = enc.slice(0, -2) + '==';
-        break;
-    case 2:
-        enc = enc.slice(0, -1) + '=';
-        break;
+        case 1:
+            enc = enc.slice(0, -2) + '==';
+            break;
+        case 2:
+            enc = enc.slice(0, -1) + '=';
+            break;
     }
 
     return enc;
 }
 
-function utf8_decode (str_data) {
+function utf8_decode(str_data) {
     // Converts a UTF-8 encoded string to ISO-8859-1  
     // 
     // version: 1103.1210
@@ -284,7 +284,7 @@ function utf8_decode (str_data) {
     return tmp_arr.join('');
 }
 
-function utf8_encode (argString) {
+function utf8_encode(argString) {
     // Encodes an ISO-8859-1 string to UTF-8  
     // 
     // version: 1103.1210

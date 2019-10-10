@@ -181,8 +181,8 @@ function aletheme_comment_default($comment, $args, $depth) {
 
 /**
  * Custom password form
- * @global object $post
- * @return string 
+ * @return string
+ *@global object $post
  */
 function aletheme_password_form() {
 	global $post;
@@ -453,9 +453,9 @@ add_action('wp_ajax_nopriv_aletheme_load_post', 'ale_load_post');
 
 /**
  * AJAXify comments
- * @global object $user
  * @param int $comment_ID
- * @param int $comment_status 
+ * @param int $comment_status
+ *@global object $user
  */
 function ale_post_comment_ajax($comment_ID, $comment_status) {
 	global $user;

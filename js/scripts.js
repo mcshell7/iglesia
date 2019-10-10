@@ -1,17 +1,17 @@
-jQuery(function($) {
+jQuery(function ($) {
     "use strict";
 
     // Custom jQuery Code Here
 
     $('.portfolioslider').flexslider({
-        animation:'slide',
-        smoothHeight:true,
+        animation: 'slide',
+        smoothHeight: true,
         controlNav: false
     });
 
     $('.newhomeslider').flexslider({
-        animation:'slide',
-        smoothHeight:true,
+        animation: 'slide',
+        smoothHeight: true,
         controlNav: false
     });
 
@@ -34,7 +34,7 @@ Modernizr.addTest('appleios', function () {
 });
 
 Modernizr.addTest('positionfixed', function () {
-    var test    = document.createElement('div'),
+    var test = document.createElement('div'),
         control = test.cloneNode(false),
         fake = false,
         root = document.body || (function () {
@@ -70,18 +70,17 @@ Modernizr.addTest('positionfixed', function () {
 Modernizr.load([
     {
         // Let's see if we need to load selectivizr
-        test : Modernizr.borderradius,
+        test: Modernizr.borderradius,
         // Modernizr.load loads selectivizr and Respond.js for IE6-8
-        nope : [ale.template_dir + '/js/libs/selectivizr.min.js', ale.template_dir + '/js/libs/respond.min.js']
-    },{
+        nope: [ale.template_dir + '/js/libs/selectivizr.min.js', ale.template_dir + '/js/libs/respond.min.js']
+    }, {
         test: Modernizr.touch,
-        yep:ale.template_dir + '/css/touch.css'
+        yep: ale.template_dir + '/css/touch.css'
     }
 ]);
 
 
-
-jQuery(function($) {
+jQuery(function ($) {
     var is_single = $('#post').length;
     var posts = $('article.post');
     var is_mobile = parseInt(ale.is_mobile);
@@ -92,8 +91,8 @@ jQuery(function($) {
         controlNav: false
     }
 
-    $(document).ajaxComplete(function(){
-        try{
+    $(document).ajaxComplete(function () {
+        try {
             if (!posts.length) {
                 return;
             }
@@ -101,19 +100,20 @@ jQuery(function($) {
             gapi.plusone.go();
             twttr.widgets.load();
             pin_load();
-        }catch(ex){}
+        } catch (ex) {
+        }
     });
 
     // open external links in new window
-    $("a[rel$=external]").each(function(){
+    $("a[rel$=external]").each(function () {
         $(this).attr('target', '_blank');
     });
 
-    $.fn.init_posts = function() {
-        var init_post = function(data) {
+    $.fn.init_posts = function () {
+        var init_post = function (data) {
             // close other posts
             data.post.siblings('.open-post').find('a.toggle').trigger('click', {
-                hide:true
+                hide: true
             });
 
             var loading = data.post.find('span.loading');
@@ -122,11 +122,11 @@ jQuery(function($) {
                 data.post.addClass('post-loading');
                 loading.css('visibility', 'visible');
                 data.more.load(ale.ajax_load_url, {
-                    'action':'aletheme_load_post',
-                    'id':data.post.data('post-id')
-                }, function(){
+                    'action': 'aletheme_load_post',
+                    'id': data.post.data('post-id')
+                }, function () {
                     loading.remove();
-                    data.more.slideDown(400, function(){
+                    data.more.slideDown(400, function () {
                         data.post.addClass('open-post');
                         data.toggler.text('Close Post');
                         $('.video', data.more).fitVids();
@@ -137,7 +137,7 @@ jQuery(function($) {
                     init_comments(data.post);
                 });
             } else {
-                data.more.slideDown(400, function(){
+                data.more.slideDown(400, function () {
                     data.post.addClass('open-post');
                     data.toggler.text('Close Post');
                     if (data.scroll) {
@@ -147,16 +147,16 @@ jQuery(function($) {
             }
         }
 
-        var load_post = function(e, _opts) {
+        var load_post = function (e, _opts) {
             e.preventDefault();
-            var data  = {
-                toggler:$(this),
-                scroll:false
+            var data = {
+                toggler: $(this),
+                scroll: false
             };
             var opts = $.extend({
-                comments:false,
-                hide:false,
-                add_comment:false
+                comments: false,
+                hide: false,
+                add_comment: false
             }, _opts);
             data.post = data.toggler.parents('article.post');
             data.more = data.post.find('.full');
@@ -171,14 +171,14 @@ jQuery(function($) {
                 data.toggler.text('Open Post');
                 data.post.removeClass('open-post');
             } else {
-                if (typeof(e.originalEvent) != 'undefined' ) {
+                if (typeof (e.originalEvent) != 'undefined') {
                     data.scroll = data.post;
                 }
                 init_post(data);
             }
         }
 
-        var init_comments = function(post) {
+        var init_comments = function (post) {
             var respond = $('section.respond', post);
             var respond_form = $('form', respond);
             var respond_form_error = $('p.error', respond_form);
@@ -204,10 +204,10 @@ jQuery(function($) {
              });
              */
             respond_form.ajaxForm({
-                'beforeSubmit':function(){
+                'beforeSubmit': function () {
                     respond_form_error.text('').hide();
                 },
-                'success':function(_data){
+                'success': function (_data) {
                     var data = $.parseJSON(_data);
                     if (data.error) {
                         respond_form_error.html(data.msg).slideDown('fast');
@@ -238,19 +238,19 @@ jQuery(function($) {
 
                     respond.find('textarea').clearFields();
                 },
-                'error':function(response){
+                'error': function (response) {
                     var error = response.responseText.match(/\<p\>(.*)<\/p\>/)[1];
-                    if (typeof(error) == 'undefined') {
+                    if (typeof (error) == 'undefined') {
                         error = 'Something went wrong. Please reload the page and try again.';
                     }
                     respond_form_error.html(error).slideDown('fast');
                 }
             });
         }
-        $(this).each(function(){
+        $(this).each(function () {
             var post = $(this);
             // init post galleries
-            $(window).load(function(){
+            $(window).load(function () {
                 $('.preview .flexslider', post).flexslider(slider_settings);
             });
             // do not init ajax posts & comments for mobile
@@ -259,7 +259,7 @@ jQuery(function($) {
                 if (ale.ajax_posts) {
                     $('a.toggle', post).click(load_post);
                     $('.video', post).fitVids();
-                    $('.preview figure a', post).click(function(e){
+                    $('.preview figure a', post).click(function (e) {
                         e.preventDefault();
                         $(this).parents('article.post').find('a.toggle').trigger('click');
                     });
@@ -277,10 +277,10 @@ jQuery(function($) {
     }
     posts.init_posts();
 
-    $.fn.init_gallery = function() {
-        $(this).each(function(){
+    $.fn.init_gallery = function () {
+        $(this).each(function () {
             var gallery = $(this);
-            $(window).load(function(){
+            $(window).load(function () {
                 $('.flexslider', gallery).flexslider(slider_settings);
             });
 
@@ -288,9 +288,8 @@ jQuery(function($) {
     }
     $('#gallery').init_gallery();
 
-    $.fn.init_archives = function()
-    {
-        $(this).each(function(){
+    $.fn.init_archives = function () {
+        $(this).each(function () {
             var archives = $(this);
             var year = $('#archives-active-year');
             var months = $('div.months div.year-months', archives);
@@ -304,7 +303,7 @@ jQuery(function($) {
                 year.text(activeMonth.attr('id').replace(/[^0-9]*/, ''));
                 return;
             }
-            arrows.click(function(e){
+            arrows.click(function (e) {
                 e.preventDefault();
                 if (animated) {
                     return;
@@ -324,8 +323,8 @@ jQuery(function($) {
                         active = months.filter(':first');
                     }
                 }
-                current.removeClass('year-active').fadeOut(150, function(){
-                    active.addClass('year-active').fadeIn(150, function(){
+                current.removeClass('year-active').fadeOut(150, function () {
+                    active.addClass('year-active').fadeIn(150, function () {
                         animated = false;
                     });
                     year.text(active.attr('id').replace(/[^0-9]*/, ''));
@@ -349,37 +348,33 @@ jQuery(function($) {
     $('#archives .ale-archives').init_archives();
 
 
-
-
-
-
 });
 
 // HTML5 Fallbacks for older browsers
-jQuery(function($) {
+jQuery(function ($) {
     // check placeholder browser support
     if (!Modernizr.input.placeholder) {
         // set placeholder values
-        $(this).find('[placeholder]').each(function() {
-            $(this).val( $(this).attr('placeholder') );
+        $(this).find('[placeholder]').each(function () {
+            $(this).val($(this).attr('placeholder'));
         });
 
         // focus and blur of placeholders
-        $('[placeholder]').focus(function() {
+        $('[placeholder]').focus(function () {
             if ($(this).val() == $(this).attr('placeholder')) {
                 $(this).val('');
                 $(this).removeClass('placeholder');
             }
-        }).blur(function() {
-                if ($(this).val() == '' || $(this).val() == $(this).attr('placeholder')) {
-                    $(this).val($(this).attr('placeholder'));
-                    $(this).addClass('placeholder');
-                }
-            });
+        }).blur(function () {
+            if ($(this).val() == '' || $(this).val() == $(this).attr('placeholder')) {
+                $(this).val($(this).attr('placeholder'));
+                $(this).addClass('placeholder');
+            }
+        });
 
         // remove placeholders on submit
-        $('[placeholder]').closest('form').submit(function() {
-            $(this).find('[placeholder]').each(function() {
+        $('[placeholder]').closest('form').submit(function () {
+            $(this).find('[placeholder]').each(function () {
                 if ($(this).val() == $(this).attr('placeholder')) {
                     $(this).val('');
                 }

@@ -5,66 +5,66 @@
 /*-----------------------------------------------------------------------------------*/
 
 $ale_shortcodes['button'] = array(
-	'no_preview' => true,
-	'params' => array(
-		'url' => array(
-			'std' => '',
-			'type' => 'text',
-			'label' => __('Button URL', 'aletheme'),
-			'desc' => __('Add the button\'s url eg http://example.com', 'aletheme')
-		),
-		'style' => array(
-			'type' => 'select',
-			'label' => __('Button Style', 'aletheme'),
-			'desc' => __('Select the button\'s style, ie the button\'s colour', 'aletheme'),
-			'options' => array(
-				'grey' => 'Grey',
-				'black' => 'Black',
-				'green' => 'Green',
-				'light-blue' => 'Light Blue',
-				'blue' => 'Blue',
-				'red' => 'Red',
-				'orange' => 'Orange',
-				'purple' => 'Purple'
-			)
-		),
-		'size' => array(
-			'type' => 'select',
-			'label' => __('Button Size', 'aletheme'),
-			'desc' => __('Select the button\'s size', 'aletheme'),
-			'options' => array(
-				'small' => 'Small',
-				'medium' => 'Medium',
-				'large' => 'Large'
-			)
-		),
-		'type' => array(
-			'type' => 'select',
-			'label' => __('Button Type', 'aletheme'),
-			'desc' => __('Select the button\'s type', 'aletheme'),
-			'options' => array(
-				'round' => 'Round',
-				'square' => 'Square'
-			)
-		),
-		'target' => array(
-			'type' => 'select',
-			'label' => __('Button Target', 'aletheme'),
-			'desc' => __('_self = open in same window. _blank = open in new window', 'aletheme'),
-			'options' => array(
-				'_self' => '_self',
-				'_blank' => '_blank'
-			)
-		),
-		'content' => array(
-			'std' => 'Button Text',
-			'type' => 'text',
-			'label' => __('Button\'s Text', 'aletheme'),
-			'desc' => __('Add the button\'s text', 'aletheme'),
-		)
-	),
-	'shortcode' => '[ale_button url="{{url}}" style="{{style}}" size="{{size}}" type="{{type}}" target="{{target}}"] {{content}} [/ale_button]',
-	'popup_title' => __('Insert Button Shortcode', 'aletheme')
+    'no_preview' => true,
+    'params' => array(
+        'url' => array(
+            'std' => '',
+            'type' => 'text',
+            'label' => __('Button URL', 'aletheme'),
+            'desc' => __('Add the button\'s url eg http://example.com', 'aletheme')
+        ),
+        'style' => array(
+            'type' => 'select',
+            'label' => __('Button Style', 'aletheme'),
+            'desc' => __('Select the button\'s style, ie the button\'s colour', 'aletheme'),
+            'options' => array(
+                'grey' => 'Grey',
+                'black' => 'Black',
+                'green' => 'Green',
+                'light-blue' => 'Light Blue',
+                'blue' => 'Blue',
+                'red' => 'Red',
+                'orange' => 'Orange',
+                'purple' => 'Purple'
+            )
+        ),
+        'size' => array(
+            'type' => 'select',
+            'label' => __('Button Size', 'aletheme'),
+            'desc' => __('Select the button\'s size', 'aletheme'),
+            'options' => array(
+                'small' => 'Small',
+                'medium' => 'Medium',
+                'large' => 'Large'
+            )
+        ),
+        'type' => array(
+            'type' => 'select',
+            'label' => __('Button Type', 'aletheme'),
+            'desc' => __('Select the button\'s type', 'aletheme'),
+            'options' => array(
+                'round' => 'Round',
+                'square' => 'Square'
+            )
+        ),
+        'target' => array(
+            'type' => 'select',
+            'label' => __('Button Target', 'aletheme'),
+            'desc' => __('_self = open in same window. _blank = open in new window', 'aletheme'),
+            'options' => array(
+                '_self' => '_self',
+                '_blank' => '_blank'
+            )
+        ),
+        'content' => array(
+            'std' => 'Button Text',
+            'type' => 'text',
+            'label' => __('Button\'s Text', 'aletheme'),
+            'desc' => __('Add the button\'s text', 'aletheme'),
+        )
+    ),
+    'shortcode' => '[ale_button url="{{url}}" style="{{style}}" size="{{size}}" type="{{type}}" target="{{target}}"] {{content}} [/ale_button]',
+    'popup_title' => __('Insert Button Shortcode', 'aletheme')
 );
 
 /*-----------------------------------------------------------------------------------*/
@@ -72,30 +72,30 @@ $ale_shortcodes['button'] = array(
 /*-----------------------------------------------------------------------------------*/
 
 $ale_shortcodes['alert'] = array(
-	'no_preview' => true,
-	'params' => array(
-		'style' => array(
-			'type' => 'select',
-			'label' => __('Alert Style', 'aletheme'),
-			'desc' => __('Select the alert\'s style, ie the alert colour', 'aletheme'),
-			'options' => array(
-				'white' => 'White',
-				'grey' => 'Grey',
-				'red' => 'Red',
-				'yellow' => 'Yellow',
-				'green' => 'Green'
-			)
-		),
-		'content' => array(
-			'std' => 'Your Alert!',
-			'type' => 'textarea',
-			'label' => __('Alert Text', 'aletheme'),
-			'desc' => __('Add the alert\'s text', 'aletheme'),
-		)
-		
-	),
-	'shortcode' => '[ale_alert style="{{style}}"] {{content}} [/ale_alert]',
-	'popup_title' => __('Insert Alert Shortcode', 'aletheme')
+    'no_preview' => true,
+    'params' => array(
+        'style' => array(
+            'type' => 'select',
+            'label' => __('Alert Style', 'aletheme'),
+            'desc' => __('Select the alert\'s style, ie the alert colour', 'aletheme'),
+            'options' => array(
+                'white' => 'White',
+                'grey' => 'Grey',
+                'red' => 'Red',
+                'yellow' => 'Yellow',
+                'green' => 'Green'
+            )
+        ),
+        'content' => array(
+            'std' => 'Your Alert!',
+            'type' => 'textarea',
+            'label' => __('Alert Text', 'aletheme'),
+            'desc' => __('Add the alert\'s text', 'aletheme'),
+        )
+
+    ),
+    'shortcode' => '[ale_alert style="{{style}}"] {{content}} [/ale_alert]',
+    'popup_title' => __('Insert Alert Shortcode', 'aletheme')
 );
 
 /*-----------------------------------------------------------------------------------*/
@@ -103,33 +103,33 @@ $ale_shortcodes['alert'] = array(
 /*-----------------------------------------------------------------------------------*/
 
 $ale_shortcodes['toggle'] = array(
-	'no_preview' => true,
-	'params' => array(
-		'title' => array(
-			'type' => 'text',
-			'label' => __('Toggle Content Title', 'aletheme'),
-			'desc' => __('Add the title that will go above the toggle content', 'aletheme'),
-			'std' => 'Title'
-		),
-		'content' => array(
-			'std' => 'Content',
-			'type' => 'textarea',
-			'label' => __('Toggle Content', 'aletheme'),
-			'desc' => __('Add the toggle content. Will accept HTML', 'aletheme'),
-		),
-		'state' => array(
-			'type' => 'select',
-			'label' => __('Toggle State', 'aletheme'),
-			'desc' => __('Select the state of the toggle on page load', 'aletheme'),
-			'options' => array(
-				'open' => 'Open',
-				'closed' => 'Closed'
-			)
-		),
-		
-	),
-	'shortcode' => '[ale_toggle title="{{title}}" state="{{state}}"] {{content}} [/ale_toggle]',
-	'popup_title' => __('Insert Toggle Content Shortcode', 'aletheme')
+    'no_preview' => true,
+    'params' => array(
+        'title' => array(
+            'type' => 'text',
+            'label' => __('Toggle Content Title', 'aletheme'),
+            'desc' => __('Add the title that will go above the toggle content', 'aletheme'),
+            'std' => 'Title'
+        ),
+        'content' => array(
+            'std' => 'Content',
+            'type' => 'textarea',
+            'label' => __('Toggle Content', 'aletheme'),
+            'desc' => __('Add the toggle content. Will accept HTML', 'aletheme'),
+        ),
+        'state' => array(
+            'type' => 'select',
+            'label' => __('Toggle State', 'aletheme'),
+            'desc' => __('Select the state of the toggle on page load', 'aletheme'),
+            'options' => array(
+                'open' => 'Open',
+                'closed' => 'Closed'
+            )
+        ),
+
+    ),
+    'shortcode' => '[ale_toggle title="{{title}}" state="{{state}}"] {{content}} [/ale_toggle]',
+    'popup_title' => __('Insert Toggle Content Shortcode', 'aletheme')
 );
 
 /*-----------------------------------------------------------------------------------*/
@@ -167,53 +167,53 @@ $ale_shortcodes['tabs'] = array(
 /*-----------------------------------------------------------------------------------*/
 
 $ale_shortcodes['columns'] = array(
-	'params' => array(),
-	'shortcode' => ' {{child_shortcode}} ', // as there is no wrapper shortcode
-	'popup_title' => __('Insert Columns Shortcode', 'aletheme'),
-	'no_preview' => true,
-	
-	// child shortcode is clonable & sortable
-	'child_shortcode' => array(
-		'params' => array(
-			'column' => array(
-				'type' => 'select',
-				'label' => __('Column Type', 'aletheme'),
-				'desc' => __('Select the type, ie width of the column.', 'aletheme'),
-				'options' => array(
-					'ale_one_third' => 'One Third',
-					'ale_one_third_last' => 'One Third Last',
-					'ale_two_third' => 'Two Thirds',
-					'ale_two_third_last' => 'Two Thirds Last',
-					'ale_one_half' => 'One Half',
-					'ale_one_half_last' => 'One Half Last',
-					'ale_one_fourth' => 'One Fourth',
-					'ale_one_fourth_last' => 'One Fourth Last',
-					'ale_three_fourth' => 'Three Fourth',
-					'ale_three_fourth_last' => 'Three Fourth Last',
-					'ale_one_fifth' => 'One Fifth',
-					'ale_one_fifth_last' => 'One Fifth Last',
-					'ale_two_fifth' => 'Two Fifth',
-					'ale_two_fifth_last' => 'Two Fifth Last',
-					'ale_three_fifth' => 'Three Fifth',
-					'ale_three_fifth_last' => 'Three Fifth Last',
-					'ale_four_fifth' => 'Four Fifth',
-					'ale_four_fifth_last' => 'Four Fifth Last',
-					'ale_one_sixth' => 'One Sixth',
-					'ale_one_sixth_last' => 'One Sixth Last',
-					'ale_five_sixth' => 'Five Sixth',
-					'ale_five_sixth_last' => 'Five Sixth Last'
-				)
-			),
-			'content' => array(
-				'std' => '',
-				'type' => 'textarea',
-				'label' => __('Column Content', 'aletheme'),
-				'desc' => __('Add the column content.', 'aletheme'),
-			)
-		),
-		'shortcode' => '[{{column}}] {{content}} [/{{column}}] ',
-		'clone_button' => __('Add Column', 'aletheme')
-	)
+    'params' => array(),
+    'shortcode' => ' {{child_shortcode}} ', // as there is no wrapper shortcode
+    'popup_title' => __('Insert Columns Shortcode', 'aletheme'),
+    'no_preview' => true,
+
+    // child shortcode is clonable & sortable
+    'child_shortcode' => array(
+        'params' => array(
+            'column' => array(
+                'type' => 'select',
+                'label' => __('Column Type', 'aletheme'),
+                'desc' => __('Select the type, ie width of the column.', 'aletheme'),
+                'options' => array(
+                    'ale_one_third' => 'One Third',
+                    'ale_one_third_last' => 'One Third Last',
+                    'ale_two_third' => 'Two Thirds',
+                    'ale_two_third_last' => 'Two Thirds Last',
+                    'ale_one_half' => 'One Half',
+                    'ale_one_half_last' => 'One Half Last',
+                    'ale_one_fourth' => 'One Fourth',
+                    'ale_one_fourth_last' => 'One Fourth Last',
+                    'ale_three_fourth' => 'Three Fourth',
+                    'ale_three_fourth_last' => 'Three Fourth Last',
+                    'ale_one_fifth' => 'One Fifth',
+                    'ale_one_fifth_last' => 'One Fifth Last',
+                    'ale_two_fifth' => 'Two Fifth',
+                    'ale_two_fifth_last' => 'Two Fifth Last',
+                    'ale_three_fifth' => 'Three Fifth',
+                    'ale_three_fifth_last' => 'Three Fifth Last',
+                    'ale_four_fifth' => 'Four Fifth',
+                    'ale_four_fifth_last' => 'Four Fifth Last',
+                    'ale_one_sixth' => 'One Sixth',
+                    'ale_one_sixth_last' => 'One Sixth Last',
+                    'ale_five_sixth' => 'Five Sixth',
+                    'ale_five_sixth_last' => 'Five Sixth Last'
+                )
+            ),
+            'content' => array(
+                'std' => '',
+                'type' => 'textarea',
+                'label' => __('Column Content', 'aletheme'),
+                'desc' => __('Add the column content.', 'aletheme'),
+            )
+        ),
+        'shortcode' => '[{{column}}] {{content}} [/{{column}}] ',
+        'clone_button' => __('Add Column', 'aletheme')
+    )
 );
 
 /*-----------------------------------------------------------------------------------*/
